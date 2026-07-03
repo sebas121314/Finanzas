@@ -40,5 +40,21 @@ export default [
       sourceType: 'commonjs',
     },
   },
+  {
+    files: ['jest.setup.js', '**/*.test.{js,jsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.jest,
+        ...globals.node,
+      },
+    },
+  },
+  {
+    files: ['src/features/auth/AuthContext.jsx', 'src/shared/ui/Toast.jsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
   prettier,
 ]
